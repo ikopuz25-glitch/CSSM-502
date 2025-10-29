@@ -1,0 +1,47 @@
+# First, I defined a random list and a target value.  
+
+import math 
+my_list = [2, 3, 5, 7,19, 23, 45, 56, 72, 87, 103]
+         
+target_value= 19
+
+# I defined my_index with the index function which will store the index of target_value in my_list. 
+my_index= my_list.index (target_value)
+
+# I asked for inputs. 
+input_a = input()
+input_a = int(input_a)
+
+# Then I wrote an if statement which will return the index of the target_value if it is equal to the given input_a.
+
+if input_a== target_value:
+    print (my_index)
+    
+# Then I wrote an else statement where I put an another index function(?) index_value that 
+# will store the value of the index where the i'th number in my_list that entered the for loop. 
+# While the for loop checking each index j= my_list[i] to be greater than the
+# input, index_value stores where the input would be if it were inserted in the list. 
+# When it comes to an index that is greater than itself the loop stops and it returns the value. 
+# This is only possible because the list is already ordered. 
+# The code worked for numbers less than 2 but it was not working for integeres greater than the last index 
+# I tried some solutions but they broke the other parts so I wrote a practical elif line for that. 
+# When the input is one of the numbers in the list, it gives the already existed index.  
+
+else:  
+      for i in range(len(my_list)): 
+          j= my_list[i]
+          index_value= my_list.index(j)
+          
+          if input_a <= j:
+              print (index_value)
+              break
+
+
+          elif input_a > 103:
+              print (11)
+              break 
+
+         
+
+          
+ 
