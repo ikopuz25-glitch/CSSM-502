@@ -29,19 +29,13 @@ else:
 
 # Question 2
 
-# First, I defined a random list and a target value.  
-# I defined my_index with the index function which will store the index of target_value in my_list. 
-# I asked for inputs. 
-# Then I wrote an if statement which will return the index of the target_value if it is equal to the given input_a.
-# Then I wrote an else statement where I put an another index function(?) index_value that 
+# I wrote an else statement where I put an another index function(?) index_value that 
 # will store the value of the index where the i'th number in my_list that entered the for loop. 
-# While the for loop checking each index j= my_list[i] to be greater than the
-# input, index_value stores where the input would be if it were inserted in the list. 
+# While the for loop checking each index j= my_list[i] to be greater than the input, 
+# index_value stores where the input would be if it were inserted in the list. 
 # When it comes to an index that is greater than itself the loop stops and it returns the value. 
 # This is only possible because the list is already ordered. 
-# The code worked for numbers less than 2 but it was not working for integeres greater than the last index 
-# I tried some solutions but they broke the other parts so I wrote a practical elif line for that. 
-# When the input is one of the numbers in the list, it gives the already existed index. 
+
 
 my_list = [2, 3, 5, 7,19, 23, 45, 56, 72, 87, 103]
          
@@ -72,11 +66,7 @@ else:
 ##Question 3 
 
 #First, I took binary numbers in inputs as strings, so that I an count their digits. 
-### I create a list with the string versions of them 
-# I store the values of their digit numbers with the len fuction in digit_1 and digit_2
-#I wrote a function and descrbied the first and second indexes of the set my_list respectively as 
-# bin_1 and bin_2. At this point bin_1 and bin_2 are strings. 
-#Now, I define two integers, int_1 and int_2. And a dummy variable "power" to use as powers of 2. 
+# I create a list with the string versions of them 
 #In this for loop, I tried to write a binomial expansion, range has to be digit_1-1. 
 #Because expansion starts from 0 and goes to n-1,counting n. 
 #The index(i) also starts from 0 so to make them equal it has to be digit_1-1.
@@ -153,8 +143,7 @@ for i in range (len(dna)):
 
 # So here it checks every element of the set whether they are the same,
 #there was need for nested loops because when I only controlled the consecutives they are all distinct.
-# I tried different things with the ranges this one also worked.j can starts from the end, i from the 0 and they can meet at the middle of the list also. 
-# But with different sequences it does not work sometimes. 
+# But with different dna sequences sometimes the code did not worked. 
 
 for i in range(j): 
     for j in range (i+1, len(splits)):
