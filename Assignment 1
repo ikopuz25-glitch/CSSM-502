@@ -149,15 +149,16 @@ splits = []
 for i in range (len(dna)): 
     dna_list= (dna[i:i+10])
     splits.append(dna_list)
-   #print(dna_list)
+    print(dna_list)
 
 # So here it checks every element of the set whether they are the same,
 #there was need for nested loops because when I only controlled the consecutives they are all distinct.
 # I tried different things with the ranges this one also worked.j can starts from the end, i from the 0 and they can meet at the middle of the list also. 
+# But with different sequences it does not work sometimes. 
 
-for i in range(0,j): 
+for i in range(j): 
     for j in range (i+1, len(splits)):
-        if splits[i]== splits[j]:
+        if splits[i] == splits[j]:
             
             print (splits[i])
     
