@@ -1,24 +1,10 @@
-# QUESTION 2 
+import math
+# Question 2
 
 # First, I defined a random list and a target value.  
-
-import math 
-my_list = [2, 3, 5, 7,19, 23, 45, 56, 72, 87, 103]
-         
-target_value= 19
-
 # I defined my_index with the index function which will store the index of target_value in my_list. 
-my_index= my_list.index (target_value)
-
 # I asked for inputs. 
-input_a = input()
-input_a = int(input_a)
-
 # Then I wrote an if statement which will return the index of the target_value if it is equal to the given input_a.
-
-if input_a== target_value:
-    print (my_index)
-    
 # Then I wrote an else statement where I put an another index function(?) index_value that 
 # will store the value of the index where the i'th number in my_list that entered the for loop. 
 # While the for loop checking each index j= my_list[i] to be greater than the
@@ -27,8 +13,19 @@ if input_a== target_value:
 # This is only possible because the list is already ordered. 
 # The code worked for numbers less than 2 but it was not working for integeres greater than the last index 
 # I tried some solutions but they broke the other parts so I wrote a practical elif line for that. 
-# When the input is one of the numbers in the list, it gives the already existed index.  
+# When the input is one of the numbers in the list, it gives the already existed index. 
 
+my_list = [2, 3, 5, 7,19, 23, 45, 56, 72, 87, 103]
+         
+target_value= 19
+my_index= my_list.index (target_value)
+
+input_a = input()
+input_a = int(input_a)
+
+
+if input_a== target_value:
+    print (my_index)
 else:  
       for i in range(len(my_list)): 
           j= my_list[i]
@@ -43,73 +40,64 @@ else:
               print (11)
               break 
 
-###### Question 3 
+          
+##Question 3 
 
-### First, I took binary numbers in inputs as strings, so that I an count their digits. 
+#First, I took binary numbers in inputs as strings, so that I an count their digits. 
+### I create a list with the string versions of them 
+# I store the values of their digit numbers with the len fuction in digit_1 and digit_2
+#I wrote a function and descrbied the first and second indexes of the set my_list respectively as 
+# bin_1 and bin_2. At this point bin_1 and bin_2 are strings. 
+#Now, I define two integers, int_1 and int_2. And a dummy variable "power" to use as powers of 2. 
+#In this for loop, I tried to write a binomial expansion, range has to be digit_1-1. 
+#Because expansion starts from 0 and goes to n-1,counting n. 
+#The index(i) also starts from 0 so to make them equal it has to be digit_1-1.
+#To be honest I didn't properly understand the logic of why it goes reverse, I tried with +1 it didnt worked. 
+# Each for loop we add 1 to the power so the expansion continues, 
+# When the loop finished for int_1 we have to redescribed power as 0 for int_2. 
+
 bin_1= input()
 bin_2= input()
 bin_1= str(bin_1)
 bin_2= str(bin_2)
 
-### I create a list with the string versions of them 
 my_list= [bin_1, bin_2]
 
-#print (my_list)
-
-#print (len(str(bin_1)))
-#print (len(str(bin_2)))
-
-# I store the values of their digit numbers with the len fuction in digit_1 and digit_2
 digit_1= len(str(bin_1))
 digit_2= len(str(bin_2))
 
-#print (digit_1)
-#print (digit_2)
 
 def bin_to_int (my_list):
-
-#I wrote a function and descrbied the first and second indexes of the set my_list respectively as 
-# bin_1 and bin_2. At this point bin_1 and bin_2 are strings.  
     bin_1 = my_list[0]
     bin_2 = my_list[1]
-    #print(type(bin_1))
-    
-#Now, I define two integers, int_1 and int_2. And a dummy variable "power" to use as powers of 2. 
-    
+      
     int_1=0 
     int_2=0 
     power=0
-
-#In this for loop, I tried to write a binomial expansion, range has to be digit_1-1. 
-#Because expansion starts from 0 and goes to n-1,counting n. 
-#The index(i) also starts from 0 so to make them equal it has to be digit_1-1.
-#To be honest I didn't properly understand the logic of why it goes reverse, I tried with +1 it didnt worked. 
     
     for i in range(digit_1-1, -1, -1): 
         
         int_1= int_1 + int(bin_1[i]) * pow(2,power)
         power= power + 1
         
-    # print(int_1)
-    
-# Each for loop we add 1 to the power so the expansion continues, 
-# When the loop finished for int_1 we have to redescribed power as 0 for int_2 
     power= 0
     
     for i in range(digit_2 -1, -1, -1):  
         
         int_2= int_2 + int(bin_2[i]) * pow(2,power)
         power= power + 1
-    
-    #print (int_2)
-        
-
  
     sum= int_1 + int_2 
     
     return sum 
 
 print(bin_to_int(my_list)) 
+        
+
+    
+
+
+        
         
 
     
