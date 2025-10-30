@@ -142,7 +142,7 @@ for i in range (len(dna)):
     print(dna_list)
 
 # So here it checks every element of the set whether they are the same,
-#there was need for nested loops because when I only controlled the consecutives they are all distinct.
+# there was need for nested loops because when I only controlled the consecutives they are all distinct.
 
 for i in range(len(splits)-1): 
     for j in range (i+1, len(splits)):
